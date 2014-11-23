@@ -25,6 +25,18 @@
 
 		});
 
+		app.controller=('ReviewController', function()
+		{
+			this.review = {};
+
+			this.addReview = function(product)
+			{
+				product.reviews.push(this.review)
+				this.review = {};
+			}
+
+		});
+
 		var gems =
 		[
 			{
@@ -32,7 +44,16 @@
 				price: 2.95,
 				description: 'This is a gem!',
 				canPurchase: true,
-				soldOut: false
+				soldOut: false,
+				reviews: 
+				[
+					{
+						review: 'Simple review',
+						author: 'test@test.com',
+						stars: 5
+					}
+				]
+				
 			},
 			{
 				name: 'Pentagon Gem',
@@ -41,6 +62,8 @@
 				canPurchase: true,
 				soldOut: false
 			}
+
+
 		]
 	}
 )();

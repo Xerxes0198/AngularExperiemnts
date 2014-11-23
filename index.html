@@ -32,12 +32,15 @@
 				<h4>Specifications</h4>
 			</div>
 
-			<div class="panel" ng-show="panel.isSelected(3)">
-				<h4>Reviews</h4>
+			<div class="panel" ng-show="panel.isSelected(3)" ng-repeat="review in pr">
+				<form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+					<blockquote>
+						<b>Stars: {{}}</b>
+						
+					</blockquote>
+					
+				</form>
 			</div>
-
-
 		</section>
-
 	</body>
 </html>
